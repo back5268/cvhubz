@@ -57,48 +57,9 @@ const Dashboard = () => {
   }, [JSON.stringify(data)]);
 
   return (
-    <Cardz className="flex flex-col px-2">
-      <div className="flex justify-center my-6 uppercase text-xl font-bold">
-        Báo cáo tổng hợp {moment(params.fromDate).format('DD/MM/YYYY')} - {moment(params.toDate).format('DD/MM/YYYY')}
-      </div>
-      <div className="w-full flex flex-wrap mb-4">
-        <InputCalendarz
-          className="!w-6/12"
-          value={params.fromDate}
-          onChange={(e) => setParams({ ...params, fromDate: e })}
-          label="Từ ngày"
-        />
-        <InputCalendarz className="!w-6/12" value={params.toDate} onChange={(e) => setParams({ ...params, toDate: e })} label="Đến ngày" />
-      </div>
-      <Hrz />
-      <div className="flex p-4">
-        {items?.map((item, index) => (
-          <div key={index} className="lg:w-3/12 p-2">
-            <Ticket image={item.image} amount={item.amount} label={item.label} />
-          </div>
-        ))}
-      </div>
-      <Hrz />
-      <div className="px-4">
-        <div className="flex items-center my-12">
-          <div className="w-full lg:w-6/12">
-            <PieChart data={[data?.totalDiy, data?.total3D, data?.totalTdiy]} label="Doanh thu (VND)" title="Tỉ lệ doanh thu" />
-          </div>
-          <div className="w-full lg:w-6/12">
-            <PieChart data={[data?.numberDiy, data?.number3D, data?.numberTdiy]} label="Số lượng (đơn hàng)" title="Tỉ lệ đơn hàng" />
-          </div>
-        </div>
-        <Hrz />
-        <LineChart
-          data={data?.dataz?.map((d) => d.total)}
-          labels={data?.dataz?.map((d) => d.date)}
-          total={data?.total}
-          totalDiy={data?.totalDiy}
-          total3D={data?.total3D}
-          totalTdiy={data?.totalTdiy}
-        />
-      </div>
-    </Cardz>
+    <div className="flex flex-col px-2">
+      
+    </div>
   );
 };
 

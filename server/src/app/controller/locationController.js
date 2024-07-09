@@ -16,7 +16,7 @@ export const getListLocation = async (req, res) => {
 
 export const getListLocationInfo = async (req, res) => {
   try {
-    const data = await getListLocationMd({});
+    const data = await getListLocationMd();
     res.json({ status: true, data });
   } catch (error) {
     res.status(500).json({ status: false, mess: error.toString() });

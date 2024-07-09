@@ -5,3 +5,4 @@ export { default as Locations } from './locations';
 export { default as Categories } from './categories';
 export { default as Jobs } from './jobs';
 export { default as Templates } from './templates';
+export { default as JobRegister } from './job-registers';

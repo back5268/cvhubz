@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Title = ({ label }) => {
+const Title = ({ label, className = "" }) => {
   return (
-    <div className="flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-border after:mt-0.5 after:flex-1 after:border-t after:border-border mb-4">
+    <div className={`flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-border after:mt-0.5 after:flex-1 after:border-t after:border-border mb-4 ${className}`}>
       <motion.h2
         initial={{ y: 12, opacity: 0.5 }}
         whileInView={{ y: 0, opacity: 1 }}

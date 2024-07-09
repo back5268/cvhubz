@@ -5,15 +5,16 @@ class JobMd extends ModelBase {}
 
 JobMd.init('Job', {
   company: { type: Schema.Types.ObjectId, ref: 'Company' },
-  category: { type: Schema.Types.ObjectId, re: 'Category' },
-  location: { type: Schema.Types.ObjectId, re: 'Location' },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
+  location: { type: Schema.Types.ObjectId, ref: 'Location' },
   name: { type: String, required: true },
   min: { type: Number, required: true },
   max: { type: Number, required: true },
   quantity: { type: Number },
   description: { type: String },
   experience: { type: String },
-  required: [{ type: String }],
+  slug: { type: String },
+  avatar: { type: String },
   status: { type: Number, enum: [0, 1], default: 1 },
   deletedAt: { type: Date }
 });

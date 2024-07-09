@@ -15,15 +15,17 @@ const Jobs = () => {
   const [filter, setFilter] = useState({});
   const [open, setOpen] = useState(false);
   const { isLoading, data } = useGetApi(getListJobApi, params, 'Jobs');
-  const { data: companies } = useGetApi(getListCompanyInfoApi, params, 'companies');
-  const { data: locations } = useGetApi(getListLocationInfoApi, params, 'locations');
-  const { data: categories } = useGetApi(getListCategoryInfoApi, params, 'categories');
+  const { data: companies } = useGetApi(getListCompanyInfoApi, params, 'companiyinfo');
+  const { data: locations } = useGetApi(getListLocationInfoApi, params, 'locationinfo');
+  const { data: categories } = useGetApi(getListCategoryInfoApi, params, 'categoryinfo');
+
+  console.log(experiences);
 
   const columns = [
     { label: 'Tên công việc', field: 'name' },
-    { label: 'Công ty', body: (e) => companies.find((c) => c._id === e.company)?.name },
-    { label: 'Danh mục', body: (e) => categories.find((c) => c._id === e.category)?.name },
-    { label: 'Vị trí', body: (e) => locations.find((c) => c._id === e.location)?.name },
+    { label: 'Công ty', body: (e) => companies?.find((c) => c._id === e.company)?.name },
+    { label: 'Danh mục', body: (e) => categories?.find((c) => c._id === e.category)?.name },
+    { label: 'Vị trí', body: (e) => locations?.find((c) => c._id === e.location)?.name },
     {
       label: 'Mức lương',
       body: (e) => (
@@ -34,7 +36,7 @@ const Jobs = () => {
     },
     {
       label: 'Kinh nghiệm',
-      body: (e) => experiences.find((ex) => e.experience === ex.key)?.key
+      body: (e) => experiences?.find((ex) => e.experience === ex.key)?.label
     },
     { label: 'Thời gian tạo', body: (e) => TimeBody(e.createdAt) }
   ];

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { addCompanyApi, updateCompanyApi } from '@api';
 import { FormDetail } from '@components/base';
 import { checkEqualProp } from '@lib/helper';
-import { InputForm } from '@components/core';
+import { InputForm, TextAreaz } from '@components/core';
 import { UploadImage } from '@components/shared';
 import Editorz from '@components/core/Editorz';
 
@@ -85,7 +85,7 @@ const DetailCompany = (props) => {
           </div>
         </div>
       </div>
-      <Editorz id="description" label="Mô tả" errors={errors} data={watch('description')} setData={(e) => setValue('description', e)} />
+      <TextAreaz id="description" label="Mô tả" value={watch('description')} setValue={(e) => setValue('description', e)} />
     </FormDetail>
   );
 };

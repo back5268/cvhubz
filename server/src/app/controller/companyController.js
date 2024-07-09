@@ -1,12 +1,5 @@
 import { uploadFileToFirebase } from '@lib/firebase';
-import {
-  addCompanyMd,
-  countListCompanyMd,
-  deleteCompanyMd,
-  getDetailCompanyMd,
-  getListCompanyMd,
-  updateCompanyMd
-} from '@models';
+import { addCompanyMd, countListCompanyMd, deleteCompanyMd, getDetailCompanyMd, getListCompanyMd, updateCompanyMd } from '@models';
 
 export const getListCompany = async (req, res) => {
   try {
@@ -18,6 +11,18 @@ export const getListCompany = async (req, res) => {
     const documents = await getListCompanyMd(where, page, limit);
     const total = await countListCompanyMd(where);
     res.json({ status: true, data: { documents, total } });
+  } catch (error) {
+    res.status(500).json({ status: false, mess: error.toString() });
+  }
+};
+
+export const getListCompanyWeb = async (req, res) => {
+  try {
+    const { keySearch } = req.query;
+    const where = { status: 1 };
+    if (keySearch) where.$or = [{ name: { $regex: keySearch, $options: 'i' } }];
+    const data = await getListCompanyMd(where);
+    res.json({ status: true, data });
   } catch (error) {
     res.status(500).json({ status: false, mess: error.toString() });
   }

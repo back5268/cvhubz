@@ -13,6 +13,7 @@ export const UploadFiles = (props) => {
   const onDrop = useCallback((acceptedFiles) => {
     let newFiles = [...acceptedFiles];
     if (max) newFiles = newFiles.splice(0, max);
+    console.log(newFiles);
     if (type)
       newFiles = newFiles.filter((file) => {
         return file.type.startsWith(type);

@@ -15,6 +15,18 @@ export const getListTemplate = async (req, res) => {
   }
 };
 
+export const getListTemplateWeb = async (req, res) => {
+  try {
+    const { keySearch } = req.query;
+    const where = { status: 1 };
+    if (keySearch) where.$or = [{ name: { $regex: keySearch, $options: 'i' } }];
+    const data = await getListTemplateMd(where);
+    res.json({ status: true, data });
+  } catch (error) {
+    res.status(500).json({ status: false, mess: error.toString() });
+  }
+};
+
 export const detailTemplate = async (req, res) => {
   try {
     const { _id } = req.query;
@@ -46,7 +58,7 @@ export const addTemplate = async (req, res) => {
       avatar = await uploadFileToFirebase(req.files['avatar'][0]);
     }
     if (req.files?.['file']?.[0]) {
-      avatar = await uploadFileToFirebase(req.files['file'][0]);
+      file = await uploadFileToFirebase(req.files['file'][0]);
     }
     const data = await addTemplateMd({ name, price, avatar, file });
     res.json({ status: true, data });

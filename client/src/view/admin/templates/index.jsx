@@ -1,7 +1,7 @@
 import { deleteTemplateApi, getListTemplateApi, updateTemplateApi } from '@api';
 import { DataTable, FormList, TimeBody } from '@components/base';
 import DataFilter from '@components/base/DataFilter';
-import { Dropdownz, Hrz, Inputz } from '@components/core';
+import { Dropdownz, Hrz, Imagez, Inputz } from '@components/core';
 import { statuses } from '@constant';
 import { useGetParams } from '@hook';
 import { useGetApi } from '@lib/react-query';

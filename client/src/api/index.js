@@ -10,3 +10,4 @@ export * from './auth';
 export * from './user';
 export * from './template';
 export * from './dashboard';
+export * from './jobRegister';

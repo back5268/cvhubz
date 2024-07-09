@@ -18,4 +18,5 @@ export const items = [
   { label: 'Quản lý danh mục', icon: icons.CircleStackIcon, type: 'item', route: '/categories' },
   { label: 'Quản lý công việc', icon: icons.PaperAirplaneIcon, type: 'item', route: '/jobs' },
   { label: 'Quản lý mẫu CV', icon: icons.Cog6ToothIcon, type: 'item', route: '/templates' },
+  { label: 'Danh sách ứng tuyển', icon: icons.PaperAirplaneIcon, type: 'item', route: '/job-registers' },
 ];

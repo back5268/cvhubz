@@ -3,7 +3,6 @@ import { Hrz } from '@components/core';
 import { policies, productType } from '@constant';
 import React from 'react';
 import { CheckIcon } from '@heroicons/react/24/outline';
-import { motion } from 'framer-motion';
 
 const socials = [
   {
@@ -38,7 +37,7 @@ const socials = [
 
 const contacts = [
   {
-    label: 'Phúc Tiến, Bình Yên, Thạch Thất, Hà Nội',
+    label: 'Hà Nội',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mr-3 h-5 w-5  text-[#ff7c08]">
         <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0l-8.69 8.69a.75.75 0 001.061 1.06l8.69-8.69z" />
@@ -47,7 +46,7 @@ const contacts = [
     )
   },
   {
-    label: 'decordayvn@gmail.com',
+    label: 'cvhub@gmail.com',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="mr-3 h-5 w-5  text-[#ff7c08]">
         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
@@ -73,98 +72,54 @@ const Footer = () => {
   return (
     <footer className="text-center lg:text-left !text-[#dfdddd]">
       <div className="text-center relative md:text-left bg-cover bg-top-1/4 z-0" style={{ backgroundImage: 'url(/images/bg.jpg)' }}>
-        <div className='bg-[#231f40e0] opacity-90'>
-          <motion.div
-            initial={{ y: 12, opacity: 0.5 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center justify-center border-border p-6 lg:justify-between"
-          >
+        <div className="bg-[#231f40e0] opacity-90">
+          <div className="flex items-center justify-center border-border p-6 lg:justify-between">
             <div className="mr-12 hidden lg:block">
               <span className="text-lg">Kết nối với chúng tôi tại:</span>
             </div>
             <div className="flex gap-6 items-center justify-center">
               {socials.map((social, index) => (
-                <a href={social?.to} target="_blank" key={index} className="rounded-full hover:text-[#ff7c08] hover:bg-white p-2 bg-[#ff7c08] cursor-pointer">
+                <a
+                  href={social?.to}
+                  target="_blank"
+                  key={index}
+                  className="rounded-full hover:text-[#ff7c08] hover:bg-white p-2 bg-[#ff7c08] cursor-pointer"
+                >
                   {social.icon}
                 </a>
               ))}
             </div>
-          </motion.div>
+          </div>
           <Hrz />
           <div className="relative z-10 grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-5 py-20">
-            <motion.div
-              initial={{ y: 12, opacity: 0.5 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="md:min-w-64 md:col-span-2 flex flex-col items-center justify-center gap-8"
-            >
+            <div className="md:min-w-64 md:col-span-2 flex flex-col items-center justify-center gap-8">
               <Logo classNameImg="md:h-32 h-12" />
-            </motion.div>
+            </div>
             <div className="flex flex-col gap-3">
-              <motion.h6
-                initial={{ y: 12, opacity: 0.5 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg"
-              >
-                Sản phẩm
-              </motion.h6>
+              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg">Sản phẩm</h6>
               {productType.map((product, index) => (
-                <motion.div
-                  initial={{ y: 12, opacity: 0.5 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  key={index}
-                  className="flex gap-2 md:justify-start justify-center my-2"
-                >
+                <div key={index} className="flex gap-2 md:justify-start justify-center my-2">
                   <CheckIcon className="w-6 h-6 stroke-2 text-[#ff7c08]" />
                   <span key={product.key}>{product.label}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <motion.h6
-                initial={{ y: 12, opacity: 0.5 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg"
-              >
-                Chính sách
-              </motion.h6>
+              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg">Chính sách</h6>
               {policies.map((policy, index) => (
-                <motion.div
-                  initial={{ y: 12, opacity: 0.5 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  key={index}
-                  className="flex gap-2 md:justify-start justify-center my-2"
-                >
+                <div key={index} className="flex gap-2 md:justify-start justify-center my-2">
                   <CheckIcon className="w-6 h-6 stroke-2 text-[#ff7c08]" />
                   <span key={policy.key}>{policy.label}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
             <div className="flex flex-col gap-3">
-              <motion.h6
-                initial={{ y: 12, opacity: 0.5 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg"
-              >
-                Liên hệ
-              </motion.h6>
+              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start text-lg">Liên hệ</h6>
               {contacts.map((contact, index) => (
-                <motion.div
-                  initial={{ y: 12, opacity: 0.5 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                  key={index}
-                  className="flex gap-1 md:justify-start justify-center my-2"
-                >
+                <div key={index} className="flex gap-1 md:justify-start justify-center my-2">
                   {contact.icon}
                   <span>{contact.label}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -174,7 +129,7 @@ const Footer = () => {
       <Hrz />
       <div className="p-6 text-center text-lg  bg-[#ff7c08]">
         <span>Copyright ©</span>
-        <a className="font-semibold">Decor Star</a> 2024: All Rights Reserved
+        <a className="font-semibold">Cv Hub</a> 2024: All Rights Reserved
       </div>
     </footer>
   );

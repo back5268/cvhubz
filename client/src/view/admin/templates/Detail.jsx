@@ -81,7 +81,7 @@ const DetailTemplate = (props) => {
           </div>
         </div>
       </div>
-      <UploadFiles label="File đính kèm (Vui lòng chọn file PDF)" type="pdf" files={file} setFiles={setFile} max={1} />
+      <UploadFiles label="File đính kèm (Vui lòng chọn file PDF)" type="application/pdf" files={file} setFiles={setFile} max={1} />
     </FormDetail>
   );
 };

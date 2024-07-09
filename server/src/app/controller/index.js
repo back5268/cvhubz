@@ -5,3 +5,4 @@ export * from './categoryController';
 export * from './locationController';
 export * from './templateController';
 export * from './jobController';
+export * from './jobRegisterController';

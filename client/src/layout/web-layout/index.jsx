@@ -6,7 +6,7 @@ import { Buttonz, Cardz, Linkz } from '@components/core';
 import { Logo } from '@components/base';
 import { useToastState } from '@store';
 import { INITIAL_USER_INFO, useAuthContext } from '@context/AuthContext';
-import { AvatarSection, ContactSection, Menuz } from '@layout/shared';
+import { AvatarSection, ContactSection, Menuz, NotifySection } from '@layout/shared';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import SidebarWeb from './SideBar';
 
@@ -100,12 +100,11 @@ const WebLayout = ({ children }) => {
           </div>
           {isAuthenticated ? (
             <div className="flex gap-4 items-center">
+              <NotifySection />
               <AvatarSection mode="web" onSignOut={onSignOut} />
             </div>
           ) : (
-            <Buttonz onClick={() => navigate('/auth/signin')}>
-              Đăng nhập
-            </Buttonz>
+            <Buttonz onClick={() => navigate('/auth/signin')}>Đăng nhập</Buttonz>
           )}
         </div>
       </Cardz>

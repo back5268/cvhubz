@@ -16,7 +16,7 @@ export const getListCategory = async (req, res) => {
 
 export const getListCategoryInfo = async (req, res) => {
   try {
-    const data = await getListCategoryMd({});
+    const data = await getListCategoryMd({ status: 1 });
     res.json({ status: true, data });
   } catch (error) {
     res.status(500).json({ status: false, mess: error.toString() });
