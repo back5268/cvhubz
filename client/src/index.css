@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+
+  body {
+    @apply text-color bg-background font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply border-blue-gray-200 rounded-md p-4 border-[1px];
+  }
+}
+
+.tox-tinymce {
+  border: none !important;
+}
+
+.tox .tox-statusbar {
+  border-top: 1px solid rgb(176 190 197 / 1) !important;
+}
+
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a3a3a3;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  html {
+      font-size: 8px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+      width: 50vw;
+      padding: 0;
+      margin: 0;
+      padding: 0 !important;
+      right: 16px;
+      top: 8px;
+      left: auto;
+  }
+
+  .Toastify__toast {
+    padding: 0 !important;
+  }
+}
