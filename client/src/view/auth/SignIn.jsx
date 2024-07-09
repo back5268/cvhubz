@@ -46,7 +46,7 @@ const SignIn = () => {
       localStorage.setItem('token', response);
       const res = await getInfoApi();
       if (res) {
-        setUserInfo(res);
+        setUserInfo({ ...res, type: res.role });
         setIsAuthenticated(true);
         showToast({ title: 'Đăng nhập thành công', severity: 'success' });
         navigate('/');
