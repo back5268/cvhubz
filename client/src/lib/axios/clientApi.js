@@ -23,9 +23,9 @@ clientApi.interceptors.response.use(
     if (res && res.data && res.data.status) return res.data.data;
     else return res.data;
   },
-  // async function (error) {
-  //   if (error?.response?.data) {
-  //     showToast({ title: error.response.data.mess || 'Đường truyền không ổn định vui lòng thử lại sau', severity: 'error' });
-  //   }
-  // }
+  async function (error) {
+    if (error?.response?.data) {
+      showToast({ title: error.response.data.mess || 'Đường truyền không ổn định vui lòng thử lại sau', severity: 'error' });
+    }
+  }
 );
